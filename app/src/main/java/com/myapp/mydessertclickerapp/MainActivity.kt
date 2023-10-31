@@ -12,12 +12,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.myapp.mydessertclickerapp.ui.theme.MyDessertClickerAppTheme
-private const val TAG = "MainActivity "
+
+private const val TAG = "MainActivity"
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-            Log.d(TAG,"OnCreate Called")
+        Log.d(TAG, "OnCreate Called")
         setContent {
             MyDessertClickerAppTheme {
                 // A surface container using the 'background' color from the theme
@@ -30,7 +31,40 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG,"OnStart Called")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG,"OnResume Called")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d(TAG,"OnRestart Called")
+
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG,"OnPause Called")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG,"OnStop Called")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG,"OnDestroy Called")
+    }
 }
+
+
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
